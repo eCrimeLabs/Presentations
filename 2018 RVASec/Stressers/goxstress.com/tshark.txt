@@ -1,0 +1,4 @@
+tshark -R "udp and (ip.src != 178.157.212.237)" -2 -r goxstress_com_full.pcap -T fields -e frame.time_epoch -e ip.src -e udp.srcport -e ip.dst -e udp.dstport -e ip.proto -e ip.frag_offset -e ip.ttl -e frame.len -E header=y -E separator=, > goxstress_com_UDP_20160830.csv
+sed -e 's/$/,goxstress.com/' -i goxstress_com_UDP_20160830.csv
+sed -e 's/frame.len,goxstress.com/frame.len,stresser/' -i goxstress_com_UDP_20160830.csv
+sed -i '/8.8.8.8/d' goxstress_com_UDP_20160830.csv

@@ -1,0 +1,84 @@
+{
+  "template" : "dadosmon_*",
+  "settings" : {
+    "index.refresh_interval" : "60s",
+    "index.number_of_shards": "1"
+  },
+  "mappings" : {
+    "_default_" : {
+      "_all" : {"enabled" : true, "norms" : true},
+      "dynamic_templates" : [ {
+        "message_field" : {
+          "match" : "message",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "string", "index" : "not_analyzed", "norms" : true,
+            "fielddata" : { "format" : "disabled" }
+          }
+        }
+      }, {
+        "string_fields" : {
+          "match" : "*",
+          "match_mapping_type" : "string",
+          "mapping" : {
+            "type" : "string", "index" : "analyzed", "norms" : true,
+            "fielddata" : { "format" : "disabled" },
+            "fields" : {
+              "raw" : {"type": "string", "index" : "not_analyzed", "ignore_above" : 256}
+            }
+          }
+        }
+      } ]
+   },
+   "event": {
+      "properties" : {
+        "@timestamp": { "type": "date" },
+        "@version": { "type": "text", "index": "not_analyzed" },
+        "domain": { "type": "string", "index": "not_analyzed" },
+        "proto": { "type": "string", "index": "not_analyzed" },
+        "dst_port": { "type": "string", "index": "not_analyzed" },
+        "attack_desc": { "type": "string", "index": "not_analyzed" },
+        "sent_bytes": { "type": "integer", "index": "not_analyzed" },
+        "recv_bytes": { "type": "integer", "index": "not_analyzed" },
+        "src_ip": { "type": "ip" },
+        "dst_ip": { "type": "ip" },
+        "src_geoip"  : {
+          "dynamic": true,
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "float" },
+            "longitude" : { "type" : "float" },
+            "country_code2": { "type": "string", "index": "not_analyzed" },
+            "country_name": { "type": "string", "index": "not_analyzed" }
+          }
+        },
+        "dst_geoip"  : {
+          "dynamic": true,
+          "properties" : {
+            "ip": { "type": "ip" },
+            "location" : { "type" : "geo_point" },
+            "latitude" : { "type" : "float" },
+            "longitude" : { "type" : "float" },
+            "country_code2": { "type": "string", "index": "not_analyzed" },
+            "country_name": { "type": "string", "index": "not_analyzed" }
+          }
+        },
+        "dst_whois"  : {
+          "dynamic": true,
+          "properties" : {
+            "asn": { "type": "string", "index": "not_analyzed" },
+            "number": { "type": "string", "index": "not_analyzed" }  
+          }
+        },
+        "src_whois"  : {
+          "dynamic": true,
+          "properties" : {
+            "asn": { "type": "string", "index": "not_analyzed" },          
+            "number": { "type": "string", "index": "not_analyzed" }        
+          }
+        }
+      }
+    }
+  }
+}

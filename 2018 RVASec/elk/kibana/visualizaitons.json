@@ -1,0 +1,340 @@
+[
+  {
+    "_id": "Protocol-pie-chart",
+    "_type": "visualization",
+    "_source": {
+      "title": "Protocol pie chart",
+      "visState": "{\"title\":\"Protocol pie chart\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false,\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"proto\",\"size\":9999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocols\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Forensic-Mode",
+    "_type": "visualization",
+    "_source": {
+      "title": "Forensic Mode",
+      "visState": "{\"title\":\"Forensic Mode\",\"type\":\"table\",\"params\":{\"perPage\":30,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"amp_factor\",\"customLabel\":\"Amplification factor\"}},{\"id\":\"10\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"@timestamp\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Timestamp (UTC)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_ip\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Vulnerable IP\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_port\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Vulnerable Port\"}},{\"id\":\"9\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"proto\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}},{\"id\":\"11\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_geoip.country_name\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Country\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.asn\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"ASN\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.number\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"ASN #\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"attack_desc\",\"size\":99999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Attack Description\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"dst_geoip.country_code2:DK AND proto:chargen\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c66b6020-fdc1-11e6-81dd-250cc7cfbcae",
+    "_type": "visualization",
+    "_source": {
+      "title": "Max and Average Amplification Factor - Extended version",
+      "visState": "{\"title\":\"Max and Average Amplification Factor - Extended version\",\"type\":\"table\",\"params\":{\"perPage\":20,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"amp_factor\",\"customLabel\":\"Average Amplification Factor\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"amp_factor\",\"customLabel\":\"Maximum Amplification Factor\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"recv_bytes\",\"customLabel\":\"Averange recv_bytes\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"recv_bytes\",\"customLabel\":\"Max recv_bytes\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"sent_bytes\",\"customLabel\":\"Average ent_bytes\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"proto\",\"size\":9999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"attack_desc\",\"size\":9999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Attack type\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":4,\"direction\":\"desc\"}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Max-and-Average-Bytes-Recieved",
+    "_type": "visualization",
+    "_source": {
+      "title": "Max and Average Bytes Recieved",
+      "visState": "{\"title\":\"Max and Average Bytes Recieved\",\"type\":\"table\",\"params\":{\"perPage\":22,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"recv_bytes\",\"customLabel\":\"Average Bytes recieved\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"proto\",\"size\":99,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"attack_desc\",\"size\":99,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Attack type\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"recv_bytes\",\"customLabel\":\"Maximum Bytes Recieved\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"sent_bytes\",\"size\":99,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Sent Bytes\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "f61c2260-fb3b-11e6-be8d-1bae86d2cff1",
+    "_type": "visualization",
+    "_source": {
+      "title": "Monthly distribution",
+      "visState": "{\"title\":\"Monthly distribution\",\"type\":\"histogram\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Amount of IP's\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Time\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"proto:dns\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "b4e3a480-fb72-11e6-be8d-1bae86d2cff1",
+    "_type": "visualization",
+    "_source": {
+      "title": "Servcie distribution - Geo over a year",
+      "visState": "{\"title\":\"Servcie distribution - Geo over a year\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_geoip.country_name\",\"size\":9999999,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"proto:ssdp\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Amplification-chart-based-on-IP's-Grouped-by-protocol",
+    "_type": "visualization",
+    "_source": {
+      "title": "Amplification chart based on IP's - Grouped by protocol",
+      "visState": "{\"title\":\"Amplification chart based on IP's - Grouped by protocol\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"grouped\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"range\",\"schema\":\"segment\",\"params\":{\"field\":\"amp_factor\",\"ranges\":[{\"from\":2,\"to\":4},{\"from\":4,\"to\":6},{\"from\":6,\"to\":8},{\"from\":8,\"to\":10},{\"from\":10,\"to\":20},{\"from\":20,\"to\":40},{\"from\":40,\"to\":80},{\"from\":80,\"to\":100},{\"from\":100,\"to\":200},{\"from\":200,\"to\":500},{\"from\":500,\"to\":1000},{\"from\":1000,\"to\":2000},{\"from\":2000,\"to\":5000},{\"from\":5000}],\"customLabel\":\"Amplification factor\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"proto\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": true\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Unique-vulnerable-IP's-and-Services",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique vulnerable IP's and Services",
+      "visState": "{\"title\":\"Unique vulnerable IP's and Services\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"fontSize\":\"36\",\"gauge\":{\"autoExtend\":false,\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":100}],\"gaugeColorMode\":\"None\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Metric\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"#333\",\"labels\":false,\"show\":false,\"width\":2},\"style\":{\"bgColor\":false,\"bgFill\":\"#ffff\",\"fontSize\":60,\"labelColor\":false,\"subText\":\"\"},\"type\":\"simple\",\"useRange\":false,\"verticalSplit\":false},\"handleNoResults\":true,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique Vulnerable services\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Unique Vulnerable IP's\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"defaultColors\": {\n      \"0 - 100\": \"rgb(0,104,55)\"\n    }\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Amplification-chart-based-on-IP's",
+    "_type": "visualization",
+    "_source": {
+      "title": "Amplification chart based on IP's",
+      "visState": "{\"title\":\"Amplification chart based on IP's\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"range\",\"schema\":\"segment\",\"params\":{\"field\":\"amp_factor\",\"ranges\":[{\"from\":2,\"to\":4},{\"from\":4,\"to\":8},{\"from\":8,\"to\":10},{\"from\":10,\"to\":20},{\"from\":20,\"to\":50},{\"from\":50,\"to\":100},{\"from\":100,\"to\":500},{\"from\":500,\"to\":1000},{\"from\":1000,\"to\":5000},{\"from\":5000}],\"customLabel\":\"Amplification factor\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": false\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ASN-list-of-vulnerable-services-based-on-AS-Name-no-service-sort",
+    "_type": "visualization",
+    "_source": {
+      "title": "ASN list of vulnerable services based on AS Name no service sort",
+      "visState": "{\"title\":\"ASN list of vulnerable services based on AS Name no service sort\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique IP Per service\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.asn\",\"size\":999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Name\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.number\",\"size\":999999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Number\"}},{\"id\":\"5\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_geoip.country_name\",\"size\":999999,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-25-Country-Unique-IP's",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 25 - Country Unique IP's",
+      "visState": "{\"title\":\"Top 25 - Country Unique IP's\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_geoip.country_name\",\"size\":25,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Country\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": false\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-10-AS-Name-with-Amp-systems-(Unique-IP's)",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 AS Name with Amp systems (Unique IP's)",
+      "visState": "{\"title\":\"Top 10 AS Name with Amp systems (Unique IP's)\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_whois.asn\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Number\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": false\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Compare-discovered-IP's-per-month",
+    "_type": "visualization",
+    "_source": {
+      "title": "Compare discovered IP's per month",
+      "visState": "{\"title\":\"Compare discovered IP's per month\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"grouped\",\"times\":[],\"addTimeMarker\":true,\"defaultYExtents\":true,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"M\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"proto\",\"size\":12,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-10-AS-Numbers-with-Amp-systems-(Unique-IP's)-Services",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 AS Numbers with Amp systems (Unique IP's) - Services",
+      "visState": "{\"title\":\"Top 10 AS Numbers with Amp systems (Unique IP's) - Services\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_whois.number\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Number\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"proto\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": true\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Unique-vulnerable-services-per-ASN",
+    "_type": "visualization",
+    "_source": {
+      "title": "Unique vulnerable services per ASN",
+      "visState": "{\"title\":\"Unique vulnerable services per ASN\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique IP Per service\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.asn\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Name\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.number\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Number\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"dst_geoip.country_code2:DK\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-10-AS-Numbers-with-Amp-systems-(Unique-IP's)",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 AS Numbers with Amp systems (Unique IP's)",
+      "visState": "{\"title\":\"Top 10 AS Numbers with Amp systems (Unique IP's)\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_whois.number\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Number\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": false\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-10-AS-Name-with-Amp-systems-(Unique-IP's)-Services",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 AS Name with Amp systems (Unique IP's) - Services",
+      "visState": "{\"title\":\"Top 10 AS Name with Amp systems (Unique IP's) - Services\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_whois.asn\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Number\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"proto\",\"size\":15,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": true\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "World-map-Unique-IP's",
+    "_type": "visualization",
+    "_source": {
+      "title": "World map - Unique IP's",
+      "visState": "{\"title\":\"World map - Unique IP's\",\"type\":\"tile_map\",\"params\":{\"mapType\":\"Scaled Circle Markers\",\"isDesaturated\":true,\"addTooltip\":true,\"heatMaxZoom\":16,\"heatMinOpacity\":0.1,\"heatRadius\":25,\"heatBlur\":15,\"heatNormalizeData\":true,\"wms\":{\"enabled\":false,\"url\":\"https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer\",\"options\":{\"version\":\"1.3.0\",\"layers\":\"0\",\"format\":\"image/png\",\"transparent\":true,\"attribution\":\"Maps provided by USGS\",\"styles\":\"\"}}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique IP's with service\"}},{\"id\":\"2\",\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_geoip.location\",\"autoPrecision\":true,\"precision\":2}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Top-10-Country-Unique-IP's-Grouped-by-Protocol",
+    "_type": "visualization",
+    "_source": {
+      "title": "Top 10 - Country Unique IP's Grouped by Protocol",
+      "visState": "{\"title\":\"Top 10 - Country Unique IP's Grouped by Protocol\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"scale\":\"linear\",\"mode\":\"grouped\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique IP's\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_geoip.country_name\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Country\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"proto\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"legendOpen\": true\n  }\n}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "ASN-list-of-vulnerable-service-per-ASN",
+    "_type": "visualization",
+    "_source": {
+      "title": "ASN list of vulnerable service per ASN",
+      "visState": "{\"title\":\"ASN list of vulnerable service per ASN\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique IP Per service\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.asn\",\"size\":99999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Name\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"dst_whois.number\",\"size\":99999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"AS Number\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"proto\",\"size\":99999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"attack_desc\",\"size\":99999,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Attack type\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "",
+      "savedSearchId": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"dst_geoip.country_code2:DK\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Response-time-based-on-attack-types",
+    "_type": "visualization",
+    "_source": {
+      "title": "Response time based on attack types",
+      "visState": "{\"title\":\"Response time based on attack types\",\"type\":\"table\",\"params\":{\"perPage\":20,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"resp_time_ms\",\"customLabel\":\"Average Response Time (ms)\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"proto\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Protocol\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"attack_desc\",\"size\":0,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Attack type\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Sent-slash-Recieved-Bytes",
+    "_type": "visualization",
+    "_source": {
+      "title": "Sent/Recieved Bytes",
+      "visState": "{\"title\":\"Sent/Recieved Bytes\",\"type\":\"metric\",\"params\":{\"fontSize\":\"56\",\"handleNoResults\":true},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"sent_bytes\",\"customLabel\":\"Sent data\"}},{\"id\":\"2\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"recv_bytes\",\"customLabel\":\"Amplified response\"}},{\"id\":\"3\",\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"fingerprint.raw\",\"customLabel\":\"Unique systems\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"amp_factor:[110 TO *]\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Max-and-Average-Amplification-Factor",
+    "_type": "visualization",
+    "_source": {
+      "title": "Max and Average Amplification Factor",
+      "visState": "{\n  \"title\": \"Max and Average Amplification Factor\",\n  \"type\": \"table\",\n  \"params\": {\n    \"perPage\": 20,\n    \"showPartialRows\": false,\n    \"showMeticsAtAllLevels\": false,\n    \"sort\": {\n      \"columnIndex\": null,\n      \"direction\": null\n    },\n    \"showTotal\": false,\n    \"totalFunc\": \"sum\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"avg\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"amp_factor\",\n        \"customLabel\": \"Average Amplification Factor\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"proto\",\n        \"size\": 9999,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"customLabel\": \"Protocol\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"bucket\",\n      \"params\": {\n        \"field\": \"attack_desc\",\n        \"size\": 9999,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"customLabel\": \"Attack type\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"amp_factor\",\n        \"customLabel\": \"Maximum Amplification Factor\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}",
+      "uiStateJSON": "{\n  \"vis\": {\n    \"params\": {\n      \"sort\": {\n        \"columnIndex\": null,\n        \"direction\": null\n      }\n    }\n  }\n}",
+      "description": "Max and Average Amplification Factor",
+      "savedSearchId": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"dadosmon\",\n  \"query\": {\n    \"query_string\": {\n      \"query\": \"*\",\n      \"analyze_wildcard\": true\n    }\n  },\n  \"filter\": []\n}"
+      }
+    }
+  },
+  {
+    "_id": "AWDHP2qC--kdBTw0LU5A",
+    "_type": "visualization",
+    "_source": {
+      "title": "World_MAP_2",
+      "visState": "{\"title\":\"World_MAP_2\",\"type\":\"region_map\",\"params\":{\"addTooltip\":true,\"colorSchema\":\"Yellow to Red\",\"legendPosition\":\"bottomright\",\"selectedJoinField\":{\"description\":\"Two letter abbreviation\",\"name\":\"iso2\"},\"selectedLayer\":{\"attribution\":\"<p><a href=\\\"http://www.naturalearthdata.com/about/terms-of-use\\\">Made with NaturalEarth</a> | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\",\"created_at\":\"2017-04-26T17:12:15.978370\",\"fields\":[{\"description\":\"Two letter abbreviation\",\"name\":\"iso2\"},{\"description\":\"Country name\",\"name\":\"name\"},{\"description\":\"Three letter abbreviation\",\"name\":\"iso3\"}],\"format\":\"geojson\",\"id\":5659313586569216,\"name\":\"World Countries\",\"url\":\"https://layers.geo.elastic.co/blob/5659313586569216?elastic_tile_service_tos=agree&my_app_version=5.6.4&license=630c7cfb-b172-43aa-a524-58eb77037dc6\"},\"type\":\"region_map\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"dst_ip\",\"customLabel\":\"IP\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dst_geoip.country_code2\",\"size\":200,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Top 200 Countries\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"mapCenter\":[0.08789059053082422,0],\"mapZoom\":2}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dadosmon\",\"query\":{\"query_string\":{\"query\":\"NOT dst_geoip.country_code2:(\\\"EU\\\" OR \\\"CW\\\" OR \\\"SX\\\" OR \\\"AP\\\" OR \\\"A1\\\" OR \\\"BQ\\\" OR \\\"SS\\\")\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]

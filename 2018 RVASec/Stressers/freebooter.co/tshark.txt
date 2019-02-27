@@ -1,0 +1,4 @@
+tshark -R "udp and (ip.src != 178.157.212.237)" -2 -r freebooter_co_full.pcap -T fields -e frame.time_epoch -e ip.src -e udp.srcport -e ip.dst -e udp.dstport -e ip.proto -e ip.frag_offset -e ip.ttl -e frame.len -E header=y -E separator=, > freebooter_co_UDP_20160830.csv
+sed -e 's/$/,freebooter.co/' -i freebooter_co_UDP_20160830.csv
+sed -e 's/frame.len,freebooter.co/frame.len,stresser/' -i freebooter_co_UDP_20160830.csv
+sed -i '/8.8.8.8/d' freebooter_co_UDP_20160830.csv

@@ -1,0 +1,87 @@
+[
+  {
+    "_id": "Map-North-Korea",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Map - North Korea",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"World-map-Unique-IP's\",\"panelIndex\":2,\"row\":4,\"size_x\":7,\"size_y\":6,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Top-25-Country-Unique-IP's\",\"panelIndex\":3,\"row\":1,\"size_x\":7,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Protocol-pie-chart\",\"panelIndex\":4,\"row\":3,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Max-and-Average-Amplification-Factor\",\"panelIndex\":5,\"row\":7,\"size_x\":5,\"size_y\":5,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Unique-vulnerable-IP's-and-Services\",\"panelIndex\":6,\"row\":1,\"size_x\":5,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"dst_ip:\\\"175.45.176.0/22\\\"\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Test-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Test - Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"ASN-list-of-vulnerable-service-per-ASN\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":1},{\"id\":\"ASN-list-of-vulnerable-services-based-on-AS-Name-no-service-sort\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":1},{\"id\":\"Amplification-chart-based-on-IP's\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":3,\"size_y\":2,\"col\":7,\"row\":1},{\"id\":\"Amplification-chart-based-on-IP's-Grouped-by-protocol\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":1},{\"id\":\"Compare-discovered-IP's-per-month\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":3},{\"id\":\"DDoS_Stresser_Unique_IPs\",\"type\":\"visualization\",\"panelIndex\":6,\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":3},{\"id\":\"DDoS_Stresser_Unique_IPs_seperated_by_src_port\",\"type\":\"visualization\",\"panelIndex\":7,\"size_x\":3,\"size_y\":2,\"col\":7,\"row\":3},{\"id\":\"Forensic-Mode\",\"type\":\"visualization\",\"panelIndex\":8,\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":3},{\"id\":\"Max-and-Average-Amplification-Factor\",\"type\":\"visualization\",\"panelIndex\":9,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":5},{\"id\":\"Max-and-Average-Bytes-Recieved\",\"type\":\"visualization\",\"panelIndex\":10,\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":5},{\"id\":\"Protocol-pie-chart\",\"type\":\"visualization\",\"panelIndex\":11,\"size_x\":3,\"size_y\":2,\"col\":7,\"row\":5},{\"id\":\"Response-time-based-on-attack-types\",\"type\":\"visualization\",\"panelIndex\":12,\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":5},{\"id\":\"Sent-slash-Recieved-Bytes\",\"type\":\"visualization\",\"panelIndex\":13,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":7},{\"id\":\"Top-10-Country-Unique-IP's-Grouped-by-Protocol\",\"type\":\"visualization\",\"panelIndex\":14,\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":7},{\"id\":\"Top-10-AS-Name-with-Amp-systems-(Unique-IP's)\",\"type\":\"visualization\",\"panelIndex\":15,\"size_x\":3,\"size_y\":2,\"col\":7,\"row\":7},{\"id\":\"Top-10-AS-Name-with-Amp-systems-(Unique-IP's)-Services\",\"type\":\"visualization\",\"panelIndex\":16,\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":7},{\"id\":\"Top-10-AS-Numbers-with-Amp-systems-(Unique-IP's)\",\"type\":\"visualization\",\"panelIndex\":17,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":9},{\"id\":\"Top-10-AS-Numbers-with-Amp-systems-(Unique-IP's)-Services\",\"type\":\"visualization\",\"panelIndex\":18,\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":9},{\"id\":\"Top-25-Country-Unique-IP's\",\"type\":\"visualization\",\"panelIndex\":19,\"size_x\":3,\"size_y\":2,\"col\":7,\"row\":9},{\"id\":\"Unique-vulnerable-IP's-and-Services\",\"type\":\"visualization\",\"panelIndex\":20,\"size_x\":3,\"size_y\":2,\"col\":10,\"row\":9},{\"id\":\"Unique-vulnerable-services-per-ASN\",\"type\":\"visualization\",\"panelIndex\":21,\"size_x\":3,\"size_y\":2,\"col\":1,\"row\":11},{\"id\":\"World-map-Unique-IP's\",\"type\":\"visualization\",\"panelIndex\":22,\"size_x\":3,\"size_y\":2,\"col\":4,\"row\":11}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Scientia",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Scientia",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Amplification-chart-based-on-IP's\",\"panelIndex\":1,\"row\":3,\"size_x\":4,\"size_y\":3,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Amplification-chart-based-on-IP's-Grouped-by-protocol\",\"panelIndex\":2,\"row\":5,\"size_x\":8,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Protocol-pie-chart\",\"panelIndex\":3,\"row\":6,\"size_x\":4,\"size_y\":4,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Top-10-Country-Unique-IP's-Grouped-by-Protocol\",\"panelIndex\":4,\"row\":9,\"size_x\":8,\"size_y\":4,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Top-25-Country-Unique-IP's\",\"panelIndex\":5,\"row\":1,\"size_x\":8,\"size_y\":4,\"type\":\"visualization\"},{\"col\":5,\"id\":\"Max-and-Average-Amplification-Factor\",\"panelIndex\":6,\"row\":13,\"size_x\":8,\"size_y\":8,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Unique-vulnerable-IP's-and-Services\",\"panelIndex\":7,\"row\":1,\"size_x\":4,\"size_y\":2,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{\"P-1\":{\"vis\":{\"legendOpen\":false}},\"P-6\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-7\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"},\"legendOpen\":false}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "AWA2O6GOW8jRpWgiGuoQ",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Map - Screen",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Top-25-Country-Unique-IP's\",\"panelIndex\":3,\"row\":1,\"size_x\":7,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Protocol-pie-chart\",\"panelIndex\":4,\"row\":1,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"Max-and-Average-Amplification-Factor\",\"panelIndex\":5,\"row\":4,\"size_x\":7,\"size_y\":9,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Unique-vulnerable-IP's-and-Services\",\"panelIndex\":6,\"row\":5,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{\"P-5\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-6\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"NOT proto:\\\"coap\\\"\",\"analyze_wildcard\":true}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "Map",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Map",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"Top-25-Country-Unique-IP's\",\"panelIndex\":3,\"row\":1,\"size_x\":7,\"size_y\":3,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Protocol-pie-chart\",\"panelIndex\":4,\"row\":3,\"size_x\":5,\"size_y\":4,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Max-and-Average-Amplification-Factor\",\"panelIndex\":5,\"row\":7,\"size_x\":5,\"size_y\":9,\"type\":\"visualization\"},{\"col\":8,\"id\":\"Unique-vulnerable-IP's-and-Services\",\"panelIndex\":6,\"row\":1,\"size_x\":5,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"id\":\"AWDHP2qC--kdBTw0LU5A\",\"panelIndex\":7,\"row\":4,\"size_x\":7,\"size_y\":6,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{\"P-5\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}},\"P-6\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"P-7\":{\"mapCenter\":[33.87041555094183,-0.87890625],\"mapZoom\":2}}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
