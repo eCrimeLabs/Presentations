@@ -1,6 +1,11 @@
 # Presentations
 Slides and data from various eCrimeLabs speaking engagements
 
+*2019-03-18 EAAA - Guest lecture – Aarhus Business Academy*
+Combining logs and threat data feeds
+David Thejl-Clayton - 18/03/2019
+https://www.eaaa.dk/
+
 *2019-02-25 OWASP meeting West (#OWASPdkWest) - Denmark*
 MISP Threat Sharing - closing the gaps
 https://www.eventbrite.com/e/owasp-dk-vest-meeting-registration-55145664166#
