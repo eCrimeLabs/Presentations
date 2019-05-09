@@ -1,6 +1,10 @@
 # Presentations
 Slides and data from various eCrimeLabs speaking engagements
 
+*2019-05-08 Aarhus University - Department of Computer Science*
+CyberHack - MISP Threat Sharing - closing the gaps
+https://cyberhack.dk/aarhus/
+
 *2019-03-18 EAAA - Guest lecture – Aarhus Business Academy*
 Combining logs and threat data feeds
 David Thejl-Clayton - 18/03/2019
