@@ -1,6 +1,10 @@
 # Presentations
 Slides and data from various eCrimeLabs speaking engagements
 
+*2019-10-20 MISP Threat Intelligence Summit 0x05*
+Utilizing MISP into your Incident reponse plan
+https://2019.hack.lu/misp-summit/
+
 *2019-05-08 Aarhus University - Department of Computer Science*
 CyberHack - MISP Threat Sharing - closing the gaps
 https://cyberhack.dk/aarhus/
