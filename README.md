@@ -1,6 +1,11 @@
 # Presentations
 Slides and data from various eCrimeLabs speaking engagements
 
+*2023-10 Hack.LU*
+Cratos - Use your bloody indicators
+https://2023.hack.lu/
+https://www.youtube.com/watch?v=yFvvFIq7TKk
+
 *2019-10-20 MISP Threat Intelligence Summit 0x05*
 Utilizing MISP into your Incident reponse plan
 https://2019.hack.lu/misp-summit/
